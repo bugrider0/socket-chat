@@ -5,7 +5,8 @@ const messageInput = document.querySelector(
   chatForm = document.querySelector(
     ".message-input-container > form"
   ) as HTMLElement,
-  chatBox = document.querySelector(".messages-container > ul") as HTMLElement;
+  chatBox = document.querySelector(".messages-container > ul") as HTMLElement,
+  feedBak = document.querySelector(".feedBak") as HTMLElement;
 
 const socket = io();
 
@@ -20,8 +21,16 @@ chatForm.addEventListener("submit", (e) => {
   }
 });
 
+// Send OnTyping Event
+messageInput.addEventListener("keypress", () => {
+  socket.emit("typing", {
+    name: "یه نفر",
+  });
+});
+
 // Listening
 socket.on("chatMessage", (data: any) => {
+  feedBak.innerHTML = "(0.^.0)";
   chatBox.innerHTML += `
     <li class="message">
       <header><p class="message-sender-name">حسین نجفی</p></header>
@@ -29,4 +38,8 @@ socket.on("chatMessage", (data: any) => {
       <footer><p class="Message-time">18:45</p></footer>
     </li>
   `;
+});
+
+socket.on("typing", (data: any) => {
+  feedBak.innerHTML = `${data.name} درحال تایپ کردن هست`;
 });

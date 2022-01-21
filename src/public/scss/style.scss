@@ -5,6 +5,14 @@
   h4 {
     font-weight: bolder;
   }
+  .feedBak {
+    font-size: 15px;
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: $radius-1;
+  }
+
   width: 96%;
   height: 40px;
   box-shadow: $shadow-1;

@@ -29,4 +29,8 @@ io.on("connection", (socket) => {
   socket.on("chatMessage", (data) => {
     io.sockets.emit("chatMessage", data);
   });
+
+  socket.on("typing", (data) => {
+    socket.broadcast.emit("typing", data);
+  });
 });
