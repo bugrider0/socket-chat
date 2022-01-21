@@ -1,2 +1,69 @@
 @import "includes/variables";
 @import "includes/mixins";
+
+.main-header {
+  width: 96%;
+  height: 40px;
+  box-shadow: $shadow-2;
+  border-radius: $radius-2;
+  margin: 2% auto;
+  @include flexCenter(row, space-around, center);
+}
+
+.messages-container ul {
+  width: 96%;
+  min-height: calc(100vh - 170px);
+  max-height: calc(100vh - 120px);
+  box-shadow: $shadow-2;
+  border-radius: $radius-2;
+  margin: 2% auto;
+  padding-bottom: 2%;
+  @include flexCenter(column, end, center);
+  li {
+    padding: 5px;
+    width: 96%;
+    box-shadow: $shadow-2;
+    border-radius: $radius-2;
+    margin-top: 2%;
+    @include flexCenter(column, space-around, center);
+    header {
+      font-size: 0.9rem;
+      width: 100%;
+      @include flexCenter(row, space-between, center);
+      margin-right: 1%;
+    }
+    footer {
+      @extend header;
+      justify-content: end;
+      margin-left: 1%;
+    }
+    main {
+      border-radius: $radius-1;
+      background-color: #efefef;
+      padding: 5px;
+      margin: 5px;
+      width: 99%;
+    }
+  }
+}
+
+.message-input-container form {
+  @extend .main-header;
+  justify-content: none;
+  overflow: hidden;
+  button {
+    width: 10%;
+    height: 100%;
+    font-size: 1.4rem;
+    border: none;
+    color: white;
+    background-color: $blue;
+  }
+  input {
+    width: 90%;
+    height: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: none;
+  }
+}

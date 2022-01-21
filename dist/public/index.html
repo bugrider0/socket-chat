@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,7 +11,60 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>چتروم</title>
   </head>
-  <body></body>
+  <body>
+    <!-- ChatRoom -->
+    <header class="main-header">
+      <h3>گروه دلشکستگان خسته :)</h3>
+    </header>
+    <main class="main-chatRoom">
+      <section class="messages-container">
+        <ul>
+          <li class="message">
+            <header>
+              <p class="message-sender-name">حسین نجفی</p>
+            </header>
+            <main>
+              <pre class="message-text">سلام حالت چطوره ؟</pre>
+            </main>
+            <footer>
+              <p class="Message-time">18:45</p>
+            </footer>
+          </li>
+
+          <li class="message">
+            <header>
+              <p class="message-sender-name">حسین نجفی</p>
+            </header>
+            <main>
+              <pre class="message-text">سلام حالت چطوره ؟</pre>
+            </main>
+            <footer>
+              <p class="Message-time">18:45</p>
+            </footer>
+          </li>
+
+          <li class="message">
+            <header>
+              <p class="message-sender-name">حسین نجفی</p>
+            </header>
+            <main>
+              <pre class="message-text">سلام حالت چطوره ؟</pre>
+            </main>
+            <footer>
+              <p class="Message-time">18:45</p>
+            </footer>
+          </li>
+        </ul>
+      </section>
+      <section class="message-input-container">
+        <form>
+          <button type="submit" class="fab fa-telegram-plane"></button>
+          <input type="text" placeholder="بنویس ..." />
+        </form>
+      </section>
+    </main>
+    <!-- / ChatRoom -->
+  </body>
   <script src="/scripts/socket.io.min.js"></script>
   <script>
     var socket = io();
