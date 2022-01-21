@@ -25,7 +25,11 @@ io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
   // Disconnect
-  socket.on("disconnect", () => console.log(`User Disconnected: ${socket.id}`));
+  socket.on("disconnect", () => {
+    console.log(`User Disconnected: ${socket.id}`);
+    delete allMembers[socket.id];
+    io.sockets.emit("online", allMembers);
+  });
 
   // Listening
   socket.on("chatMessage", (data) => {
