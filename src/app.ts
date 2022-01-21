@@ -23,3 +23,8 @@ server.listen(PORT, () =>
     `Server is Running on -> http://${HOST}:${PORT} and ${NODE_ENV} Mode`
   )
 );
+
+// WebSocket
+io.on("connection", (socket) => {
+  console.log(`User ${socket.id} Connected`);
+});
