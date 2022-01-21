@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,29 +8,32 @@
     <link rel="stylesheet" href="/css/animate.min.css" />
     <link rel="stylesheet" href="/css/all.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>چت</title>
+    <title>ورود</title>
   </head>
   <body>
-    <!-- ChatRoom -->
-    <header class="main-header">
-      <h4>گروه دلشکستگان خسته :)</h4>
-      <div class="feedBak">(0._.0)</div>
-    </header>
-    <main class="main-chatRoom">
-      <section class="messages-container">
-        <ul>
-          <!-- All Chats Render Here -->
-        </ul>
-      </section>
-      <section class="message-input-container">
-        <form>
-          <button type="submit" class="fab fa-telegram-plane"></button>
-          <input autofocus type="text" placeholder="بنویس ..." />
-        </form>
-      </section>
+    <main class="myMain">
+      <form id="myLoginForm">
+        <input
+          type="text"
+          name="email"
+          placeholder="اسمت چیه ؟"
+          autofocus
+          required
+          id="myInput"
+        />
+        <input type="submit" value="ورود" />
+      </form>
     </main>
-    <!-- / ChatRoom -->
   </body>
-  <script src="/scripts/socket.io.min.js"></script>
-  <script src="/scripts/main.js"></script>
+  <script>
+    const myFrom = document.getElementById("myLoginForm"),
+      nameInput = document.getElementById("myInput");
+    myFrom.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (nameInput.value) {
+        localStorage.setItem("name", nameInput.value);
+        window.location.replace("/chatRoom.html");
+      }
+    });
+  </script>
 </html>

@@ -82,3 +82,31 @@
     border: none;
   }
 }
+
+//  Login
+#myLoginForm {
+  width: 80%;
+  margin: 100px auto;
+  height: 200px;
+  border-radius: $radius-2;
+  box-shadow: $shadow-1;
+  @include flexCenter(column, space-around, center);
+  input {
+    width: 80%;
+    height: 40px;
+    text-align: center;
+    border: none;
+    border-radius: $radius-2;
+    box-shadow: $shadow-1;
+    font-size: 1.1rem;
+  }
+  input[type="submit"] {
+    width: 30%;
+    background-color: blue;
+    color: white;
+  }
+  input:hover {
+    border-right: 5px solid red;
+    border-left: 5px solid red;
+  }
+}
