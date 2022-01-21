@@ -25,13 +25,20 @@
       </form>
     </main>
   </body>
+  <script src="/scripts/socket.io.min.js"></script>
   <script>
     const myFrom = document.getElementById("myLoginForm"),
       nameInput = document.getElementById("myInput");
+
+    const socket = io();
+
     myFrom.addEventListener("submit", (e) => {
       e.preventDefault();
       if (nameInput.value) {
         localStorage.setItem("name", nameInput.value);
+
+        socket.emit("logined", { name: nameInput.value });
+
         window.location.replace("/chatRoom.html");
       }
     });

@@ -18,6 +18,8 @@ server.listen(PORT, () =>
   )
 );
 
+const allMembers: any = {};
+
 // WebSocket
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
@@ -32,5 +34,11 @@ io.on("connection", (socket) => {
 
   socket.on("typing", (data) => {
     socket.broadcast.emit("typing", data);
+  });
+
+  socket.on("logined", (data) => {
+    allMembers[socket.id] = data.name;
+
+    io.sockets.emit("onlines", allMembers);
   });
 });
