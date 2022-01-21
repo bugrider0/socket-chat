@@ -9,11 +9,15 @@
   transition: 0.25s all ease;
   scroll-behavior: smooth;
   outline: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
 *::before,
 *::after {
   box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 
 body {

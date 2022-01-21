@@ -4,17 +4,17 @@
 .main-header {
   width: 96%;
   height: 40px;
-  box-shadow: $shadow-2;
+  box-shadow: $shadow-1;
   border-radius: $radius-2;
   margin: 2% auto;
   @include flexCenter(row, space-around, center);
 }
 
 .messages-container ul {
-  box-shadow: inset 0 0 10px rgb(179, 179, 179) !important;
+  box-shadow: inset 0 0 10px rgb(148, 148, 148) !important;
   width: 96%;
   height: calc(100vh - 170px);
-  box-shadow: $shadow-2;
+  box-shadow: $shadow-1;
   border-radius: $radius-2;
   overflow: hidden;
   overflow-y: scroll !important;
@@ -24,7 +24,7 @@
   li {
     padding: 5px;
     width: 96%;
-    box-shadow: $shadow-2;
+    box-shadow: $shadow-1;
     border-radius: $radius-2;
     margin-top: 2%;
     @include flexCenter(column, space-around, center);
