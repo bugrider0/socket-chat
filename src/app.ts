@@ -20,9 +20,13 @@ server.listen(PORT, () =>
 
 // WebSocket
 io.on("connection", (socket) => {
-  console.log(`User ${socket.id} Connected`);
+  console.log(`User Connected: ${socket.id}`);
 
-  socket.on("disconnect", () => {
-    console.log(`User ${socket.id} Disconnected`);
+  socket.on("disconnect", () => console.log(`User Disconnected: ${socket.id}`));
+
+  // Listening
+  socket.on("chat message", (data) => {
+    console.log(data);
+    io.sockets.emit("chat message", data);
   });
 });
