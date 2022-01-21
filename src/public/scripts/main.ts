@@ -24,7 +24,7 @@ chatForm.addEventListener("submit", (e) => {
 // Send OnTyping Event
 messageInput.addEventListener("keypress", () => {
   socket.emit("typing", {
-    name: "یه نفر",
+    name: localStorage.getItem("name"),
   });
 });
 
@@ -33,7 +33,9 @@ socket.on("chatMessage", (data: any) => {
   feedBak.innerHTML = "(0.^.0)";
   chatBox.innerHTML += `
     <li class="message">
-      <header><p class="message-sender-name">حسین نجفی</p></header>
+      <header><p class="message-sender-name">${localStorage.getItem(
+        "name"
+      )}</p></header>
       <main><pre class="message-text">${data.message}</pre></main>
       <footer><p class="Message-time">18:45</p></footer>
     </li>
