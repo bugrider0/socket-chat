@@ -42,6 +42,7 @@ socket.on("chatMessage", (data: any) => {
       <footer><p class="Message-time">18:45</p></footer>
     </li>
   `;
+  chatBox.scrollTop = chatBox.scrollHeight - chatBox.clientHeight;
 });
 
 socket.on("typing", (data: any) => {
