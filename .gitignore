@@ -8,5 +8,5 @@ dist/**/*.js
 dist/public/css/*.css
 
 # Ignore Frameworks
-!dist/public/css/*.min.css
+!dist/public/*/*.min.*
 
