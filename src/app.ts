@@ -25,8 +25,8 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => console.log(`User Disconnected: ${socket.id}`));
 
   // Listening
-  socket.on("chat message", (data) => {
+  socket.on("chatMessage", (data) => {
     console.log(data);
-    io.sockets.emit("chat message", data);
+    io.sockets.emit("chatMessage", data);
   });
 });
