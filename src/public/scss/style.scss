@@ -2,6 +2,9 @@
 @import "includes/mixins";
 
 .main-header {
+  h4 {
+    font-weight: bolder;
+  }
   width: 96%;
   height: 40px;
   box-shadow: $shadow-1;
