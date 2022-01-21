@@ -27,4 +27,8 @@ server.listen(PORT, () =>
 // WebSocket
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} Connected`);
+
+  socket.on("disconnect", () => {
+    console.log(`User ${socket.id} Disconnected`);
+  });
 });
